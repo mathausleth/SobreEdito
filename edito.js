@@ -30,7 +30,7 @@ const app = function (request, response) {
 	SOBRE.DISPLAY.STYLE.Bordurer(contentDiv);
 	// 5 - On applique les différents élements de styles à la div de contenu:
 	contentDiv.Fit() // On définit sa taille à celle du parent
-				.Border(6); // Une bordure de 6
+		.Border(6); // Une bordure de 6
 	// 6 - On créé la structure de la div de contenue, ici un découpage manuel en 3 parties:
 	const header = SOBRE.DISPLAY.OBJECT.CreerElement(contentDiv, 'div');
 	const edito = SOBRE.DISPLAY.OBJECT.CreerElement(contentDiv, 'div'); 
@@ -55,18 +55,18 @@ const app = function (request, response) {
 	// ##### HEADER ####
 	// 8a - On décrit le header:
 	header.Float('left')
-			.Size(868, 160);
+		.Size(868, 160);
 	// 8b - Découpage manuel du header en 3 parties:
 	const headerImgDiv = SOBRE.DISPLAY.OBJECT.CreerElement(header, 'div');
 	const headerDateDiv = SOBRE.DISPLAY.OBJECT.CreerElement(header, 'div');
 	const headerTitleDiv = SOBRE.DISPLAY.OBJECT.CreerElement(header, 'div');
 	// 8c - On décrit chaque partie du header:
 	headerImgDiv.Float('left')
-					.Size(160, 160);
+		.Size(160, 160);
 	headerDateDiv.Float('left')
-					.Size(708, 80);
+		.Size(708, 80);
 	headerTitleDiv.Float('left')
-					.Size(708, 80);
+		.Size(708, 80);
 	// 8d - On ajoute l'image:
 	const headerImg = SOBRE.DISPLAY.OBJECT.CreerImage(headerImgDiv, imgLogo.file)
 		.Size(160, SOBRE.DISPLAY.FUNCTION.CalculerHauteurImageSelonFichier(imgLogo, 160));
@@ -82,10 +82,10 @@ const app = function (request, response) {
 	// 8g - On ajuste la hauteur de ligne de la date et on décrit la date:
 	SOBRE.DISPLAY.STYLE.Textualiser(headerDateDiv);
 	headerDateDiv.LineHeight(40)
-			.FontSize('28px')
-			.FontStyle('italic')
-			.FontVariant('small-caps')
-			.FontWeight('lighter');
+		.FontSize('28px')
+		.FontStyle('italic')
+		.FontVariant('small-caps')
+		.FontWeight('lighter');
 	// 8h - On ajoute le titre:
 	const headerTitle = SOBRE.DISPLAY.OBJECT.CreerElement(headerTitleDiv, 'h1')
 		.Float('left');
@@ -93,8 +93,8 @@ const app = function (request, response) {
 	// 8i - On position le titre:
 	SOBRE.DISPLAY.STYLE.Styliser(headerTitleDiv, 'position', 'relative');
 	headerTitle.Main(true)
-					.Bottom(0)
-					.Left(0);
+		.Bottom(0)
+		.Left(0);
 	// 8j - On ajuste la hauteur de ligne du header:
 	SOBRE.DISPLAY.STYLE.Textualiser(headerTitleDiv);
 	headerTitleDiv.LineHeight(80);
@@ -103,10 +103,10 @@ const app = function (request, response) {
 	SOBRE.DISPLAY.STYLE.Textualiser(edito);
 	// 9b - On décrit l'edito:
 	edito.Float('left')
-			.Size(868, 1568)
-			.FontWeight('100')
-			.FontVariant('small-caps')
-			.FontSize('24px');
+		.Size(868, 1568)
+		.FontWeight('100')
+		.FontVariant('small-caps')
+		.FontSize('24px');
 	// 9c - On écrit le contenu de l'edito ligne par ligne, soit paragraphe par paragraphe:
 	getEditoLines.forEach((line) => 
 	{
@@ -119,16 +119,16 @@ const app = function (request, response) {
 	});
 	// ##### FOOTER ####
 	// 10a - On décrit le footer:
-	footer.Float('left') //
-			.Size(868, 160);
+	footer.Float('left')
+		.Size(868, 160);
 	// 10b - On découpe le footer en 2 parties:
 	const footerTextSpan = SOBRE.DISPLAY.OBJECT.CreerElement(footer, 'span');
 	const footerImgSpan = SOBRE.DISPLAY.OBJECT.CreerElement(footer, 'span');
 	// 10c - On décrit chaque partie du footer:
 	footerImgSpan.Size(160, 160)
-					.Float('left');
+		.Float('left');
 	footerTextSpan.Size(708, 160)
-					.Float('left');
+		.Float('left');
 	// 10d - On ajoute le texte du footer:
 	const footerText = SOBRE.DISPLAY.OBJECT.CreerElement(footerTextSpan, 'h1')
 		.Float('left');
@@ -136,8 +136,8 @@ const app = function (request, response) {
 	// 10e - On positionne le footer:
 	SOBRE.DISPLAY.STYLE.Styliser(footerTextSpan, 'position', 'relative');
 	footerText.Main(true)
-				.Bottom(0)
-				.Right(10);
+		.Bottom(0)
+		.Right(10);
 	// 10f - On ajuste la hauteur de ligne du footer.
 	SOBRE.DISPLAY.STYLE.Textualiser(footerTextSpan);
 	footerTextSpan.LineHeight(160);
@@ -145,7 +145,7 @@ const app = function (request, response) {
 	const footerImg = SOBRE.DISPLAY.OBJECT.CreerImage(footerImgSpan, imgLogo.file)
 		.Size(160, SOBRE.DISPLAY.FUNCTION.CalculerHauteurImageSelonFichier(imgLogo, 160));
 	SOBRE.DISPLAY.STYLE.Styliser(footerImg, 'transform', 'scaleX(-1)');
-	// ##### FOOTER ####
+	// ##### REQUEST ####
 	// On ajoute le formatage de la réponse.
 	// A noter qu'il ne s'agit pas ici de la bonne méthode pour le faire car cette réponse sera renvoyé pour chaque requête (même .ico, .css, .js etc ..)
 	// Pour un souci d'exemple, on acceptera cette méthode.
